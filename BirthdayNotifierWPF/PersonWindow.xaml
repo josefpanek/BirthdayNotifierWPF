@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BirthdayNotifierWPF"
         mc:Ignorable="d"
-        Title="Add New Person" Height="350" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Add New Person" Height="350" Width="300" WindowStartupLocation="CenterScreen" Icon="\Resources\person_add_icon.png">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -17,6 +17,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+		
+		<Image Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="\Resources\person_add_icon.png" Stretch="None"/>
+		
+		<Label Content="_Name" Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=textBoxJmeno, Mode=OneWay}"/>
+		<Label Content="_Birthdate" Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=datePickerBirthdate, Mode=OneWay}"/>
+		
+		<TextBox Name="textBoxJmeno" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5"/>
+		
+		<DatePicker Name="datePickerBirthdate" Grid.Row="2" Grid.Column="1" Margin="0,0,0,5"/>
+		
+		<Button Name="buttonOkPerson" Content="OK" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100" IsDefault="True"/>
 
-    </Grid>
+	</Grid>
 </Window>
